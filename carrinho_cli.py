@@ -39,6 +39,17 @@ else:
 
 total_final = valor_com_desconto + frete
 
+# --- FORMA DE PAGAMENTO ---
+pagamento = input("Forma de pagamento (PIX / CARTAO): ").strip().upper()
+desconto_pix = 0.0
+
+if pagamento == "PIX":
+    desconto_pix = total_final * 0.05
+    total_final -= desconto_pix
+    print(f"✅ Desconto de 5% no PIX aplicado: -R$ {desconto_pix:.2f}")
+
+
+
 # 3. Exibição do resumo do pedido
 print("\n" + "="*35)
 print(f"RESUMO DO PEDIDO - CLIENTE: {nome_cliente.upper()}")
